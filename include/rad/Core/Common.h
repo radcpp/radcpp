@@ -85,25 +85,11 @@ T Pow2AlignDown(T value, uint64_t alignment)
     return (value & ~(alignment - 1));
 }
 
-inline
-uint32_t RoundUpToPow2(uint32_t x)
-{
-    if (x > 0)
-    {
-        return uint32_t(0x2) << BitScanReverse32(x);
-    }
-    return 0;
-}
+uint32_t RoundUpToNextPow2(uint32_t x);
+uint64_t RoundUpToNextPow2(uint64_t x);
 
-inline
-uint64_t RoundUpToPow2(uint64_t x)
-{
-    if (x > 0)
-    {
-        return uint64_t(0x2) << BitScanReverse64(x);
-    }
-    return 0;
-}
+uint32_t RoundUpToPow2(uint32_t x);
+uint64_t RoundUpToPow2(uint64_t x);
 
 template<typename T>
 constexpr T RoundUpToMultiple(T value, T alignment)

@@ -48,3 +48,60 @@ uint32_t BitScanReverse64(uint64_t mask)
     return index;
 #endif
 }
+
+uint32_t RoundUpToNextPow2(uint32_t x)
+{
+    if (x > 0)
+    {
+#if defined(_WIN32) || defined(_WIN64) || defined(__GNUC__)
+        return uint32_t(0x2) << BitScanReverse32(x);
+#else // fallback
+        x |= x >> 1;
+        x |= x >> 2;
+        x |= x >> 4;
+        x |= x >> 8;
+        x |= x >> 16;
+        x |= x >> 32;
+        return x + 1;
+#endif
+    }
+    return 0;
+}
+
+uint64_t RoundUpToNextPow2(uint64_t x)
+{
+    if (x > 0)
+    {
+#if defined(_WIN32) || defined(_WIN64) || defined(__GNUC__)
+        return uint64_t(0x2) << BitScanReverse64(x);
+#else // fallback
+        x |= x >> 1;
+        x |= x >> 2;
+        x |= x >> 4;
+        x |= x >> 8;
+        x |= x >> 16;
+        x |= x >> 32;
+        x |= x >> 64;
+        return x + 1;
+#endif
+    }
+    return 0;
+}
+
+uint32_t RoundUpToPow2(uint32_t x)
+{
+    if (x > 1)
+    {
+        return RoundUpToNextPow2(x - 1);
+    }
+    return x;
+}
+
+uint64_t RoundUpToPow2(uint64_t x)
+{
+    if (x > 1)
+    {
+        return RoundUpToNextPow2(x - 1);
+    }
+    return x;
+}
