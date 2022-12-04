@@ -143,9 +143,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\rad\Core\Common.h" />
+    <ClInclude Include="include\rad\Core\String.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp" />
+    <ClCompile Include="src\Core\String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -23,9 +23,15 @@
     <ClInclude Include="include\rad\Core\Common.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Core\String.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\String.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>
