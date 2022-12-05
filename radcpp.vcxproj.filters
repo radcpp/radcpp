@@ -32,6 +32,9 @@
     <ClInclude Include="include\rad\Core\SmallVector.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Core\Span.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
