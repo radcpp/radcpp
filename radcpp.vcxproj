@@ -145,6 +145,7 @@
     <ClInclude Include="include\rad\Core\Common.h" />
     <ClInclude Include="include\rad\Core\Containers.h" />
     <ClInclude Include="include\rad\Core\File.h" />
+    <ClInclude Include="include\rad\Core\Memory.h" />
     <ClInclude Include="include\rad\Core\SmallVector.h" />
     <ClInclude Include="include\rad\Core\Span.h" />
     <ClInclude Include="include\rad\Core\String.h" />
