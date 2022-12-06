@@ -1,7 +1,7 @@
-#include <iostream>
+#include "rad/Core/Logging.h"
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Hello, World!" << std::endl;
+    LogPrint("Global", LogLevel::Info, "Hello, World!");
     return 0;
 }

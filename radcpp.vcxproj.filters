@@ -41,6 +41,9 @@
     <ClInclude Include="include\rad\Core\Memory.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Core\Logging.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
@@ -50,6 +53,9 @@
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\File.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Logging.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>

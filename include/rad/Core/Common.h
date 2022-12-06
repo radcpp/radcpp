@@ -4,6 +4,8 @@
 #include <cstdint>
 #include <cassert>
 
+#include <type_traits>
+
 /// Returns element count of the array (size_t).
 template <typename T, size_t N>
 constexpr size_t ArraySize(const T(&array)[N])
@@ -127,4 +129,10 @@ float UintBitsToFloat(uint32_t u32)
 
     var.u32 = u32;
     return var.f32;
+}
+
+template<class T>
+constexpr auto ToUnderlying(T t) noexcept
+{
+    return static_cast<std::underlying_type_t<T>>(t);
 }
