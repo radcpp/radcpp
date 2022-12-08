@@ -15,6 +15,12 @@
     <Filter Include="src\Core">
       <UniqueIdentifier>{40f498be-56c4-489e-bdd7-3030106c7e62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Gui">
+      <UniqueIdentifier>{87c720e3-5e7e-4535-b7e0-a8783cf72fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Gui">
+      <UniqueIdentifier>{9ac1bb46-e31c-4b5f-a48c-83cf6297155b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -47,6 +53,15 @@
     <ClInclude Include="include\rad\Core\JsonDoc.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Gui\Application.h">
+      <Filter>include\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rad\Gui\Window.h">
+      <Filter>include\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rad\Core\Exception.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
@@ -63,6 +78,12 @@
     </ClCompile>
     <ClCompile Include="src\Core\JsonDoc.cpp">
       <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gui\Application.cpp">
+      <Filter>src\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gui\Window.cpp">
+      <Filter>src\Gui</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
