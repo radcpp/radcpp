@@ -65,6 +65,9 @@
     <ClInclude Include="include\rad\Core\Math.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Core\Thread.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
@@ -89,6 +92,9 @@
       <Filter>src\Gui</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Math.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Thread.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>
