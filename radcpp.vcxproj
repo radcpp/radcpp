@@ -147,6 +147,7 @@
     <ClInclude Include="include\rad\Core\Containers.h" />
     <ClInclude Include="include\rad\Core\Exception.h" />
     <ClInclude Include="include\rad\Core\File.h" />
+    <ClInclude Include="include\rad\Core\Geometry.h" />
     <ClInclude Include="include\rad\Core\JsonDoc.h" />
     <ClInclude Include="include\rad\Core\Logging.h" />
     <ClInclude Include="include\rad\Core\Math.h" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp" />
     <ClCompile Include="src\Core\File.cpp" />
+    <ClCompile Include="src\Core\Geometry.cpp" />
     <ClCompile Include="src\Core\JsonDoc.cpp" />
     <ClCompile Include="src\Core\Logging.cpp" />
     <ClCompile Include="src\Core\Math.cpp" />
