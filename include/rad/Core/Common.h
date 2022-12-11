@@ -108,6 +108,7 @@ constexpr T RoundDownToMultiple(T value, T alignment)
 inline
 uint32_t FloatBitsToUint(float f32)
 {
+    static_assert(sizeof(float) == sizeof(uint32_t));
     union Variable
     {
         float f32;
@@ -121,6 +122,7 @@ uint32_t FloatBitsToUint(float f32)
 inline
 float UintBitsToFloat(uint32_t u32)
 {
+    static_assert(sizeof(uint32_t) == sizeof(float));
     union Variable
     {
         uint32_t u32;
@@ -129,6 +131,34 @@ float UintBitsToFloat(uint32_t u32)
 
     var.u32 = u32;
     return var.f32;
+}
+
+inline
+uint64_t FloatBitsToUint(double f64)
+{
+    static_assert(sizeof(double) == sizeof(uint64_t));
+    union Variable
+    {
+        double f64;
+        uint64_t u64;
+    } var;
+
+    var.f64 = f64;
+    return var.u64;
+}
+
+inline
+double UintBitsToFloat(uint64_t u64)
+{
+    static_assert(sizeof(uint64_t) == sizeof(double));
+    union Variable
+    {
+        uint64_t u64;
+        double f64;
+    } var;
+
+    var.u64 = u64;
+    return var.f64;
 }
 
 template<class T>

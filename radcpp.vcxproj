@@ -142,6 +142,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\rad\Core\AtomicFloat.h" />
     <ClInclude Include="include\rad\Core\Common.h" />
     <ClInclude Include="include\rad\Core\Containers.h" />
     <ClInclude Include="include\rad\Core\Exception.h" />
