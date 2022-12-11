@@ -148,6 +148,7 @@
     <ClInclude Include="include\rad\Core\File.h" />
     <ClInclude Include="include\rad\Core\JsonDoc.h" />
     <ClInclude Include="include\rad\Core\Logging.h" />
+    <ClInclude Include="include\rad\Core\Math.h" />
     <ClInclude Include="include\rad\Core\Memory.h" />
     <ClInclude Include="include\rad\Core\SmallVector.h" />
     <ClInclude Include="include\rad\Core\Span.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="src\Core\File.cpp" />
     <ClCompile Include="src\Core\JsonDoc.cpp" />
     <ClCompile Include="src\Core\Logging.cpp" />
+    <ClCompile Include="src\Core\Math.cpp" />
     <ClCompile Include="src\Core\String.cpp" />
     <ClCompile Include="src\Gui\Application.cpp" />
     <ClCompile Include="src\Gui\Window.cpp" />
