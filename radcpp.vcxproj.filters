@@ -74,6 +74,9 @@
     <ClInclude Include="include\rad\Core\Geometry.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Core\BoundingBox.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
