@@ -263,7 +263,7 @@ void StrTrim(std::string& str)
     StrTrimTrailing(str);
 }
 
-std::string StrFindReplace(const std::string& str, std::string_view subOld, std::string_view subNew)
+std::string StrFindReplace(std::string_view str, std::string_view subOld, std::string_view subNew)
 {
     std::string newStr;
     newStr.reserve(str.size());

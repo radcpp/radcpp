@@ -36,5 +36,5 @@ void StrTrimLeading(std::string& str, std::string_view charlist = " \t\v\n\r\f")
 void StrTrimTrailing(std::string& str, std::string_view charlist = " \t\v\n\r\f");
 void StrTrim(std::string& str);
 
-std::string StrFindReplace(const std::string& str, std::string_view subOld, std::string_view subNew);
+std::string StrFindReplace(std::string_view str, std::string_view subOld, std::string_view subNew);
 void StrFindReplaceInPlace(std::string& str, std::string_view subOld, std::string_view subNew);
