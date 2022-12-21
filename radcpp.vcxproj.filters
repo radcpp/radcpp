@@ -21,6 +21,12 @@
     <Filter Include="src\Gui">
       <UniqueIdentifier>{9ac1bb46-e31c-4b5f-a48c-83cf6297155b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{413ab02d-22d3-4a76-bcf5-c9188949d41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\nativefiledialog-extended">
+      <UniqueIdentifier>{cbe32f93-2dab-431e-b1fe-a2c392b9453b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -77,6 +83,15 @@
     <ClInclude Include="include\rad\Core\BoundingBox.h">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\rad\Gui\FileDialog.h">
+      <Filter>include\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rad\Core\Result.h">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\nativefiledialog-extended\src\include\nfd.h">
+      <Filter>3rdparty\nativefiledialog-extended</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
@@ -108,6 +123,12 @@
     </ClCompile>
     <ClCompile Include="src\Core\Geometry.cpp">
       <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gui\FileDialog.cpp">
+      <Filter>src\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\nativefiledialog-extended\src\nfd_win.cpp">
+      <Filter>3rdparty\nativefiledialog-extended</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

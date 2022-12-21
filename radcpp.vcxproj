@@ -78,7 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,7 +112,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,6 +142,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3rdparty\nativefiledialog-extended\src\include\nfd.h" />
     <ClInclude Include="include\rad\Core\AtomicFloat.h" />
     <ClInclude Include="include\rad\Core\BoundingBox.h" />
     <ClInclude Include="include\rad\Core\Common.h" />
@@ -153,14 +154,17 @@
     <ClInclude Include="include\rad\Core\Logging.h" />
     <ClInclude Include="include\rad\Core\Math.h" />
     <ClInclude Include="include\rad\Core\Memory.h" />
+    <ClInclude Include="include\rad\Core\Result.h" />
     <ClInclude Include="include\rad\Core\SmallVector.h" />
     <ClInclude Include="include\rad\Core\Span.h" />
     <ClInclude Include="include\rad\Core\String.h" />
     <ClInclude Include="include\rad\Core\Thread.h" />
     <ClInclude Include="include\rad\Gui\Application.h" />
+    <ClInclude Include="include\rad\Gui\FileDialog.h" />
     <ClInclude Include="include\rad\Gui\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="3rdparty\nativefiledialog-extended\src\nfd_win.cpp" />
     <ClCompile Include="src\Core\Common.cpp" />
     <ClCompile Include="src\Core\File.cpp" />
     <ClCompile Include="src\Core\Geometry.cpp" />
@@ -170,6 +174,7 @@
     <ClCompile Include="src\Core\String.cpp" />
     <ClCompile Include="src\Core\Thread.cpp" />
     <ClCompile Include="src\Gui\Application.cpp" />
+    <ClCompile Include="src\Gui\FileDialog.cpp" />
     <ClCompile Include="src\Gui\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
