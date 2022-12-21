@@ -246,3 +246,12 @@ std::string Application::GetEnv(std::string_view name)
 #endif
     return value;
 }
+
+float Application::GetDisplayDPI(int displayIndex)
+{
+    float ddpi = 96.0f;
+    float hdpi = 96.0f;
+    float vdpi = 96.0f;
+    SDL_GetDisplayDPI(displayIndex, &ddpi, &hdpi, &vdpi);
+    return ddpi;
+}

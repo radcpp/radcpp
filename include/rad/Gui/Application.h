@@ -40,6 +40,8 @@ public:
 
     static std::string GetEnv(std::string_view name);
 
+    float GetDisplayDPI(int displayIndex);
+
 private:
     Window* GetWindowFromId(Uint32 id);
     void UpdateDisplays();
