@@ -17,7 +17,7 @@ public:
     void SetShouldClose(bool shouldClose) { m_shouldClose = shouldClose; }
     bool ShouldClose() { return m_shouldClose; }
 
-    SDL_Window* GetHandle() const { return m_window; }
+    SDL_Window* GetHandle() const { return m_handle; }
     void GetPosition(int* x, int* y);
     void GetSize(int* w, int* h);
     void GetMaximumSize(int* w, int* h);
@@ -29,6 +29,7 @@ public:
     // Get the index of the display associated with a window.
     int GetDisplayIndex();
     int GetDisplayMode(SDL_DisplayMode* displayMode);
+    float GetDisplayDPI();
     int GetFlags();
     int GetGammaRamp(Uint16* r, Uint16* g, Uint16* b);
     bool IsGrabbed();
@@ -86,7 +87,7 @@ protected:
 
     virtual void OnRender() {}
 
-    SDL_Window* m_window = nullptr;
+    SDL_Window* m_handle = nullptr;
     Uint32 m_id = 0;
     bool m_shouldClose = false;
 

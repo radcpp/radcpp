@@ -27,6 +27,12 @@
     <Filter Include="3rdparty\nativefiledialog-extended">
       <UniqueIdentifier>{cbe32f93-2dab-431e-b1fe-a2c392b9453b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdparty\imgui">
+      <UniqueIdentifier>{2977edfa-d20e-4983-bc7e-3c72a50b7e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\imgui\backends">
+      <UniqueIdentifier>{f6a88fac-c416-4a2b-b1ff-8bac370ff918}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -92,6 +98,30 @@
     <ClInclude Include="3rdparty\nativefiledialog-extended\src\include\nfd.h">
       <Filter>3rdparty\nativefiledialog-extended</Filter>
     </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imconfig.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui_internal.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_rectpack.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_textedit.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_truetype.h">
+      <Filter>3rdparty\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\backends\imgui_impl_sdl.h">
+      <Filter>3rdparty\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\backends\imgui_impl_sdlrenderer.h">
+      <Filter>3rdparty\imgui\backends</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Common.cpp">
@@ -129,6 +159,27 @@
     </ClCompile>
     <ClCompile Include="3rdparty\nativefiledialog-extended\src\nfd_win.cpp">
       <Filter>3rdparty\nativefiledialog-extended</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui.cpp">
+      <Filter>3rdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_demo.cpp">
+      <Filter>3rdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_draw.cpp">
+      <Filter>3rdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_tables.cpp">
+      <Filter>3rdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_widgets.cpp">
+      <Filter>3rdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\backends\imgui_impl_sdl.cpp">
+      <Filter>3rdparty\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\backends\imgui_impl_sdlrenderer.cpp">
+      <Filter>3rdparty\imgui\backends</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

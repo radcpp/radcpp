@@ -19,10 +19,10 @@ Window::~Window()
 
 bool Window::Create(const char* title, int x, int y, int width, int height, Uint32 flags)
 {
-    m_window = SDL_CreateWindow(title, x, y, width, height, flags);
-    if (m_window)
+    m_handle = SDL_CreateWindow(title, x, y, width, height, flags);
+    if (m_handle)
     {
-        m_id = SDL_GetWindowID(m_window);
+        m_id = SDL_GetWindowID(m_handle);
         Application::GetInstance()->Register(this);
         return true;
     }
@@ -31,170 +31,180 @@ bool Window::Create(const char* title, int x, int y, int width, int height, Uint
 
 void Window::Destroy()
 {
-    if (m_window)
+    if (m_handle)
     {
         Application::GetInstance()->UnRegister(this);
-        SDL_DestroyWindow(m_window);
-        m_window = nullptr;
+        SDL_DestroyWindow(m_handle);
+        m_handle = nullptr;
     }
 }
 
 void Window::GetPosition(int* x, int* y)
 {
-    SDL_GetWindowPosition(m_window, x, y);
+    SDL_GetWindowPosition(m_handle, x, y);
 }
 
 void Window::GetSize(int* w, int* h)
 {
-    SDL_GetWindowSize(m_window, w, h);
+    SDL_GetWindowSize(m_handle, w, h);
 }
 
 void Window::GetMaximumSize(int* w, int* h)
 {
-    SDL_GetWindowMaximumSize(m_window, w, h);
+    SDL_GetWindowMaximumSize(m_handle, w, h);
 }
 
 void Window::GetMinimumSize(int* w, int* h)
 {
-    SDL_GetWindowMinimumSize(m_window, w, h);
+    SDL_GetWindowMinimumSize(m_handle, w, h);
 }
 
 void Window::GetBorderSize(int* top, int* left, int* bottom, int* right)
 {
-    SDL_GetWindowBordersSize(m_window, top, left, bottom, right);
+    SDL_GetWindowBordersSize(m_handle, top, left, bottom, right);
 }
 
 float Window::GetBrightness()
 {
-    return SDL_GetWindowBrightness(m_window);
+    return SDL_GetWindowBrightness(m_handle);
 }
 
 int Window::GetDisplayIndex()
 {
-    return SDL_GetWindowDisplayIndex(m_window);
+    return SDL_GetWindowDisplayIndex(m_handle);
 }
 
 int Window::GetDisplayMode(SDL_DisplayMode* displayMode)
 {
-    return SDL_GetWindowDisplayMode(m_window, displayMode);
+    return SDL_GetWindowDisplayMode(m_handle, displayMode);
+}
+
+float Window::GetDisplayDPI()
+{
+    int displayIndex = GetDisplayIndex();
+    float ddpi = 96.0f;
+    float hdpi = 96.0f;
+    float vdpi = 96.0f;
+    SDL_GetDisplayDPI(displayIndex, &ddpi, &hdpi, &vdpi);
+    return ddpi;
 }
 
 int Window::GetFlags()
 {
-    return SDL_GetWindowFlags(m_window);
+    return SDL_GetWindowFlags(m_handle);
 }
 
 int Window::GetGammaRamp(Uint16* r, Uint16* g, Uint16* b)
 {
-    return SDL_GetWindowGammaRamp(m_window, r, g, b);
+    return SDL_GetWindowGammaRamp(m_handle, r, g, b);
 }
 
 bool Window::IsGrabbed()
 {
-    return (SDL_GetWindowGrab(m_window) == SDL_TRUE);
+    return (SDL_GetWindowGrab(m_handle) == SDL_TRUE);
 }
 
 float Window::GetOpacity()
 {
     float opacity = 1.0f;
-    SDL_GetWindowOpacity(m_window, &opacity);
+    SDL_GetWindowOpacity(m_handle, &opacity);
     return opacity;
 }
 
 Uint32 Window::GetPixelFormat()
 {
-    return SDL_GetWindowPixelFormat(m_window);
+    return SDL_GetWindowPixelFormat(m_handle);
 }
 
 const char* Window::GetTitle()
 {
-    return SDL_GetWindowTitle(m_window);
+    return SDL_GetWindowTitle(m_handle);
 }
 
 
 void Window::Resize(int w, int h)
 {
-    SDL_SetWindowSize(m_window, w, h);
+    SDL_SetWindowSize(m_handle, w, h);
 }
 
 void Window::Hide()
 {
-    SDL_HideWindow(m_window);
+    SDL_HideWindow(m_handle);
 }
 
 void Window::Show()
 {
-    SDL_ShowWindow(m_window);
+    SDL_ShowWindow(m_handle);
 }
 
 void Window::Maximize()
 {
-    SDL_MaximizeWindow(m_window);
+    SDL_MaximizeWindow(m_handle);
 }
 
 void Window::Minimize()
 {
-    SDL_MinimizeWindow(m_window);
+    SDL_MinimizeWindow(m_handle);
 }
 
 void Window::Raise()
 {
-    SDL_RaiseWindow(m_window);
+    SDL_RaiseWindow(m_handle);
 }
 
 void Window::Restore()
 {
-    SDL_RestoreWindow(m_window);
+    SDL_RestoreWindow(m_handle);
 }
 
 void Window::SetBordered(bool bordered)
 {
-    SDL_SetWindowBordered(m_window, bordered ? SDL_TRUE : SDL_FALSE);
+    SDL_SetWindowBordered(m_handle, bordered ? SDL_TRUE : SDL_FALSE);
 }
 
 int Window::SetBrightness(float brightness)
 {
-    return SDL_SetWindowBrightness(m_window, brightness);
+    return SDL_SetWindowBrightness(m_handle, brightness);
 }
 
 int Window::SetDisplayMode(const SDL_DisplayMode& mode)
 {
-    return SDL_SetWindowDisplayMode(m_window, &mode);
+    return SDL_SetWindowDisplayMode(m_handle, &mode);
 }
 
 int Window::SetGammaRamp(const Uint16* r, const Uint16* g, const Uint16* b)
 {
-    return SDL_SetWindowGammaRamp(m_window, r, g, b);
+    return SDL_SetWindowGammaRamp(m_handle, r, g, b);
 }
 
 void Window::Grab(bool grabbed)
 {
-    SDL_SetWindowGrab(m_window, grabbed ? SDL_TRUE : SDL_FALSE);
+    SDL_SetWindowGrab(m_handle, grabbed ? SDL_TRUE : SDL_FALSE);
 }
 
 void Window::SetIcon(SDL_Surface* icon)
 {
-    SDL_SetWindowIcon(m_window, icon);
+    SDL_SetWindowIcon(m_handle, icon);
 }
 
 void Window::SetInputFocus()
 {
-    SDL_SetWindowInputFocus(m_window);
+    SDL_SetWindowInputFocus(m_handle);
 }
 
 void Window::SetMaximumSize(int w, int h)
 {
-    SDL_SetWindowMaximumSize(m_window, w, h);
+    SDL_SetWindowMaximumSize(m_handle, w, h);
 }
 
 void Window::SetMinimumSize(int w, int h)
 {
-    SDL_SetWindowMinimumSize(m_window, w, h);
+    SDL_SetWindowMinimumSize(m_handle, w, h);
 }
 
 void Window::SetTitle(std::string_view title)
 {
-    SDL_SetWindowTitle(m_window, title.data());
+    SDL_SetWindowTitle(m_handle, title.data());
 }
 
 void Window::OnWindowEvent(const SDL_WindowEvent& windowEvent)
