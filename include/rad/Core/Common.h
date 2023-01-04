@@ -40,13 +40,18 @@ constexpr T BitExtract(T value, uint32_t firstBit, uint32_t lastBit)
 }
 
 /// Determines if any of the bits set in flag.
-constexpr bool HasAny(uint32_t flag, uint32_t bits)
+constexpr bool HasAnyBit(uint32_t flag, uint32_t bits)
 {
     return ((flag & bits) != 0);
 }
 
+constexpr bool HasNoBit(uint32_t flag, uint32_t bits)
+{
+    return ((flag & bits) == 0);
+}
+
 /// Determines if all of the bits set in flag.
-constexpr bool HasAll(uint32_t flag, uint32_t bits)
+constexpr bool HasAllBits(uint32_t flag, uint32_t bits)
 {
     return ((flag & bits) == bits);
 }

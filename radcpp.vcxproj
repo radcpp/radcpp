@@ -78,7 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,7 +112,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rdparty\include\;$(SolutionDir)\3rdparty\nativefiledialog-extended\src\include\;$(SolutionDir)\3rdparty\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,6 +170,29 @@
     <ClInclude Include="include\rad\Gui\Application.h" />
     <ClInclude Include="include\rad\Gui\FileDialog.h" />
     <ClInclude Include="include\rad\Gui\Window.h" />
+    <ClInclude Include="include\rad\VulkanCore.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanBuffer.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanCommandBuffer.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanCommandPool.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanCommon.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanDescriptorPool.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanDescriptorSet.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanDevice.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanEvent.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanFence.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanFramebuffer.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanImage.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanInstance.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanPhysicalDevice.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanPipeline.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanQueue.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanRenderPass.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanSampler.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanSemaphore.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanShader.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanSwapchain.h" />
+    <ClInclude Include="include\rad\VulkanCore\VulkanWindow.h" />
+    <ClInclude Include="src\VulkanCore\vk_format_utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdparty\imgui\backends\imgui_impl_sdl.cpp" />
@@ -191,6 +214,28 @@
     <ClCompile Include="src\Gui\Application.cpp" />
     <ClCompile Include="src\Gui\FileDialog.cpp" />
     <ClCompile Include="src\Gui\Window.cpp" />
+    <ClCompile Include="src\VulkanCore\vk_format_utils.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanBuffer.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanCommandBuffer.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanCommandPool.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanCommon.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanDescriptorPool.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanDescriptorSet.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanDevice.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanEvent.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanFence.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanFramebuffer.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanImage.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanInstance.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanPhysicalDevice.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanPipeline.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanQueue.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanRenderPass.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanSampler.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanSemaphore.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanShader.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanSwapchain.cpp" />
+    <ClCompile Include="src\VulkanCore\VulkanWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

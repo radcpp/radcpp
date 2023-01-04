@@ -29,7 +29,7 @@ Path FileDialog::OpenFileDialog(ArrayRef<FilterItem> filters, const Path* defaul
     Path selected;
     nfdu8char_t* outPath = nullptr;
     std::vector<nfdfilteritem_t> filterItems(filters.size());
-    for (uint32_t i = 0; i < filters.size(); ++i)
+    for (size_t i = 0; i < filters.size(); ++i)
     {
         filterItems[i].name = filters[i].name.c_str();
         filterItems[i].spec = filters[i].spec.c_str();
@@ -50,7 +50,7 @@ std::vector<Path> FileDialog::OpenFileDialogMultiSelect(ArrayRef<FilterItem> fil
     std::vector<Path> selected;
     const nfdpathset_t* outPaths = nullptr;
     std::vector<nfdfilteritem_t> filterItems(filters.size());
-    for (uint32_t i = 0; i < filters.size(); ++i)
+    for (size_t i = 0; i < filters.size(); ++i)
     {
         filterItems[i].name = filters[i].name.c_str();
         filterItems[i].spec = filters[i].spec.c_str();
@@ -84,7 +84,7 @@ Path FileDialog::SaveFileDialog(ArrayRef<FilterItem> filters, const Path* defaul
     Path selected;
     nfdu8char_t* outPath = nullptr;
     std::vector<nfdfilteritem_t> filterItems(filters.size());
-    for (uint32_t i = 0; i < filters.size(); ++i)
+    for (size_t i = 0; i < filters.size(); ++i)
     {
         filterItems[i].name = filters[i].name.c_str();
         filterItems[i].spec = filters[i].spec.c_str();

@@ -14,7 +14,7 @@
     vcpkg install boost:x64-windows
     vcpkg install glm:x64-windows
     vcpkg install rapidjson:x64-windows
-    vcpkg install sdl2:x64-windows
+    vcpkg install sdl2[vulkan]:x64-windows --recurse
     vcpkg install openimageio:x64-windows
     ```
 
