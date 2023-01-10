@@ -2,12 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="HelloWorld.cpp" />
+    <ClCompile Include="GuiDemo.cpp" />
     <ClCompile Include="Gui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowTest.h" />
-    <ClInclude Include="HelloWorld.h" />
+    <ClInclude Include="GuiDemo.h" />
     <ClInclude Include="Gui.h" />
   </ItemGroup>
 </Project>

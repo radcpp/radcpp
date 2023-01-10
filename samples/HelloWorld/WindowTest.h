@@ -1,7 +1,9 @@
 #pragma once
 
-#include "rad/Core/Logging.h"
+#include "rad/Gui/Application.h"
 #include "rad/Gui/Window.h"
+
+#include "rad/Core/Logging.h"
 
 class WindowTest : public Window
 {
@@ -10,6 +12,12 @@ public:
         m_name(name)
     {
         LogPrint(m_name.c_str(), LogLevel::Info, __FUNCTION__);
+
+        float windowScale = GetDisplayDPI() / 96.0f;
+        Create("Window Test",
+            SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+            int(1600 * windowScale), int(900 * windowScale),
+            SDL_WINDOW_ALLOW_HIGHDPI);
     }
 
     ~WindowTest()

@@ -1,15 +1,12 @@
-#include "HelloWorld.h"
-#include "rad/Core/Logging.h"
-
-#include "rad/VulkanCore.h"
+#include "WindowTest.h"
+#include "GuiDemo.h"
 
 int main(int argc, char* argv[])
 {
     Application app(argc, argv);
 
-    Ref<VulkanInstance> vulkanInstance = VulkanInstance::Create(
-        "HelloWorld", 0, true
-    );
+    //WindowTest windowTest("WindowTest");
+    //GuiDemo guiDemo;
 
     return app.Run();
 }

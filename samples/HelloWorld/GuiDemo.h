@@ -1,19 +1,12 @@
 #pragma once
 
-#include "rad/Gui/Application.h"
-#include "rad/Gui/Window.h"
-
 #include "Gui.h"
 
-class EnvWindow;
-
-class HelloWorld : public Window
+class GuiDemo : public Window
 {
 public:
-    HelloWorld();
-    ~HelloWorld();
-
-    bool Init();
+    GuiDemo();
+    ~GuiDemo();
 
 private:
     virtual bool OnEvent(const SDL_Event& event);
@@ -30,7 +23,5 @@ private:
     SDL_Renderer* m_renderer = nullptr;
     Ref<Gui> m_gui;
     bool m_showDemoWindow = true;
-    bool m_showEnvironment = true;
-    Ref<EnvWindow> m_envWindow;
 
-}; // class HelloWorld
+}; // class GuiDemo

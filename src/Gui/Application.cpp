@@ -252,6 +252,9 @@ float Application::GetDisplayDPI(int displayIndex)
     float ddpi = 96.0f;
     float hdpi = 96.0f;
     float vdpi = 96.0f;
-    SDL_GetDisplayDPI(displayIndex, &ddpi, &hdpi, &vdpi);
+    if (SDL_GetDisplayDPI(displayIndex, &ddpi, &hdpi, &vdpi) != 0)
+    {
+        LogPrint("Global", LogLevel::Error, "SDL_GetDisplayDPI: %s", SDL_GetError());
+    }
     return ddpi;
 }
