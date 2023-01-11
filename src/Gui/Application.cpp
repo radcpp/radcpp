@@ -20,7 +20,7 @@ Application::Application(int argc, char** argv)
 #endif
 
     std::string commandLine;
-    for (int i = 0; i < argc; i++)
+    for (int i = 0; i < argc; ++i)
     {
         m_commandLineArgs.push_back(argv[i]);
         commandLine += std::string(argv[i]) + " ";
@@ -58,14 +58,14 @@ Application* Application::GetInstance()
     return g_app;
 }
 
-void Application::Register(Window* window)
+void Application::RegisterEventHandler(EventHandler* handler)
 {
-    m_windows[window->GetID()] = window;
+    m_eventHandlers.push_back(handler);
 }
 
-void Application::UnRegister(Window* window)
+void Application::UnregisterEventHandler(EventHandler* handler)
 {
-    m_windows.erase(window->GetID());
+    m_eventHandlers.remove(handler);
 }
 
 int Application::Run()
@@ -78,15 +78,12 @@ int Application::Run()
             OnEvent(event);
         }
 
-        for (auto& idHandlePair : m_windows)
+        for (EventHandler* handler : m_eventHandlers)
         {
-            if (idHandlePair.second)
-            {
-                idHandlePair.second->OnRender();
-            }
+            handler->OnIdle();
         }
 
-        if (m_windows.empty())
+        if (m_eventHandlers.empty())
         {
             m_exitEventLoop = true;
         }
@@ -94,26 +91,13 @@ int Application::Run()
     return m_exitCode;
 }
 
-Window* Application::GetWindowFromId(Uint32 id)
-{
-    auto iter = m_windows.find(id);
-    if (iter != m_windows.end())
-    {
-        return iter->second;
-    }
-    return nullptr;
-}
-
 bool Application::OnEvent(const SDL_Event& event)
 {
-    for (auto& idHandlePair : m_windows)
+    for (EventHandler* handler : m_eventHandlers)
     {
-        if (idHandlePair.second)
+        if (handler->OnEvent(event))
         {
-            if (idHandlePair.second->OnEvent(event))
-            {
-                return true;
-            }
+            return true;
         }
     }
 
@@ -122,61 +106,6 @@ bool Application::OnEvent(const SDL_Event& event)
     case SDL_QUIT:
         m_exitEventLoop = true;
         break;
-    case SDL_WINDOWEVENT:
-        if (Window* window = GetWindowFromId(event.window.windowID))
-        {
-            window->OnWindowEvent(event.window);
-        }
-        break;
-    case SDL_KEYDOWN:
-        if (Window* window = GetWindowFromId(event.key.windowID))
-        {
-            window->OnKeyDown(event.key);
-        }
-        break;
-    case SDL_KEYUP:
-        if (Window* window = GetWindowFromId(event.key.windowID))
-        {
-            window->OnKeyUp(event.key);
-        }
-        break;
-    case SDL_TEXTEDITING:
-        if (Window* window = GetWindowFromId(event.edit.windowID))
-        {
-            window->OnTextEditing(event.edit);
-        }
-        break;
-    case SDL_TEXTINPUT:
-        if (Window* window = GetWindowFromId(event.text.windowID))
-        {
-            window->OnTextInput(event.text);
-        }
-        break;
-    case SDL_MOUSEMOTION:
-        if (Window* window = GetWindowFromId(event.motion.windowID))
-        {
-            window->OnMouseMove(event.motion);
-        }
-        break;
-    case SDL_MOUSEBUTTONDOWN:
-        if (Window* window = GetWindowFromId(event.button.windowID))
-        {
-            window->OnMouseButtonDown(event.button);
-        }
-        break;
-    case SDL_MOUSEBUTTONUP:
-        if (Window* window = GetWindowFromId(event.button.windowID))
-        {
-            window->OnMouseButtonUp(event.button);
-        }
-        break;
-    case SDL_MOUSEWHEEL:
-        if (Window* window = GetWindowFromId(event.wheel.windowID))
-        {
-            window->OnMouseWheel(event.wheel);
-        }
-        break;
-
     case SDL_APP_TERMINATING:
         LogPrint("Global", LogLevel::Info, "SDL_APP_TERMINATING: The application is being terminated by the OS.");
         break;
@@ -256,5 +185,5 @@ float Application::GetDisplayDPI(int displayIndex)
     {
         LogPrint("Global", LogLevel::Error, "SDL_GetDisplayDPI: %s", SDL_GetError());
     }
-    return ddpi;
+    return (hdpi + vdpi) / 2.0f;
 }

@@ -14,7 +14,10 @@ Window::Window()
 
 Window::~Window()
 {
-    Destroy();
+    if (m_handle)
+    {
+        Destroy();
+    }
 }
 
 bool Window::Create(const char* title, int x, int y, int width, int height, Uint32 flags)
@@ -23,7 +26,7 @@ bool Window::Create(const char* title, int x, int y, int width, int height, Uint
     if (m_handle)
     {
         m_id = SDL_GetWindowID(m_handle);
-        Application::GetInstance()->Register(this);
+        Application::GetInstance()->RegisterEventHandler(this);
         return true;
     }
     return false;
@@ -33,7 +36,7 @@ void Window::Destroy()
 {
     if (m_handle)
     {
-        Application::GetInstance()->UnRegister(this);
+        Application::GetInstance()->UnregisterEventHandler(this);
         SDL_DestroyWindow(m_handle);
         m_handle = nullptr;
     }
@@ -205,6 +208,77 @@ void Window::SetMinimumSize(int w, int h)
 void Window::SetTitle(std::string_view title)
 {
     SDL_SetWindowTitle(m_handle, title.data());
+}
+
+bool Window::OnEvent(const SDL_Event& event)
+{
+    switch (event.type)
+    {
+    case SDL_WINDOWEVENT:
+        if (m_id == event.window.windowID)
+        {
+            OnWindowEvent(event.window);
+            return true;
+        }
+        break;
+    case SDL_KEYDOWN:
+        if (m_id == event.key.windowID)
+        {
+            OnKeyDown(event.key);
+            return true;
+        }
+        break;
+    case SDL_KEYUP:
+        if (m_id == event.key.windowID)
+        {
+            OnKeyUp(event.key);
+            return true;
+        }
+        break;
+    case SDL_TEXTEDITING:
+        if (m_id == event.edit.windowID)
+        {
+            OnTextEditing(event.edit);
+            return true;
+        }
+        break;
+    case SDL_TEXTINPUT:
+        if (m_id == event.text.windowID)
+        {
+            OnTextInput(event.text);
+            return true;
+        }
+        break;
+    case SDL_MOUSEMOTION:
+        if (m_id == event.motion.windowID)
+        {
+            OnMouseMove(event.motion);
+            return true;
+        }
+        break;
+    case SDL_MOUSEBUTTONDOWN:
+        if (m_id == event.button.windowID)
+        {
+            OnMouseButtonDown(event.button);
+            return true;
+        }
+        break;
+    case SDL_MOUSEBUTTONUP:
+        if (m_id == event.button.windowID)
+        {
+            OnMouseButtonUp(event.button);
+            return true;
+        }
+        break;
+    case SDL_MOUSEWHEEL:
+        if (m_id == event.wheel.windowID)
+        {
+            OnMouseWheel(event.wheel);
+            return true;
+        }
+        break;
+    }
+    return false;
 }
 
 void Window::OnWindowEvent(const SDL_WindowEvent& windowEvent)

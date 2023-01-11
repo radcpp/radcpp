@@ -13,6 +13,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{B9F12520-0733-4CD6-BC4C-94984443CCBA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VulkanEngine", "samples\VulkanEngine\VulkanEngine.vcxproj", "{27745A3E-08A9-4B1D-A8A8-08F919541F99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{48B1B53C-2CAB-4484-AD7A-55C36DD023C3} = {48B1B53C-2CAB-4484-AD7A-55C36DD023C3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

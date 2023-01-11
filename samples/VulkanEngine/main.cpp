@@ -13,6 +13,7 @@ int main(int argc, char* argv[])
 #ifdef _DEBUG
     enableValidationLayer = true;
 #endif
+
     Ref<VulkanInstance> vulkanInstance = VulkanInstance::Create(
         "VulkanEngine", VK_ENGINE_VERSION,
         enableValidationLayer

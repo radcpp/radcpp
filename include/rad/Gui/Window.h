@@ -2,7 +2,7 @@
 
 #include "rad/Gui/Application.h"
 
-class Window
+class Window : public EventHandler
 {
     friend class Application;
 public:
@@ -57,7 +57,7 @@ public:
     void SetTitle(std::string_view title);
 
 protected:
-    virtual bool OnEvent(const SDL_Event& event) { return false; }
+    virtual bool OnEvent(const SDL_Event& event);
     virtual void OnWindowEvent(const SDL_WindowEvent& windowEvent);
     virtual void OnShown() {}
     virtual void OnHidden() {}
@@ -86,6 +86,7 @@ protected:
     virtual void OnMouseWheel(const SDL_MouseWheelEvent& mouseWheel) {}
 
     virtual void OnRender() {}
+    virtual void OnIdle() { OnRender(); }
 
     SDL_Window* m_handle = nullptr;
     Uint32 m_id = 0;
